@@ -4,7 +4,7 @@ type cases = [
   Expect<Equal<ParsePrintFormat<''>, []>>,
   Expect<Equal<ParsePrintFormat<'Any string.'>, []>>,
   Expect<Equal<ParsePrintFormat<'The result is %d.'>, ['dec']>>,
-  Expect<Equal<ParsePrintFormat<'The result is %%d.'>, []>>,
+  Expect<Equal<ParsePrintFormat<'The result is %%d.'>, ['dec']>>,
   Expect<Equal<ParsePrintFormat<'The result is %%%d.'>, ['dec']>>,
   Expect<Equal<ParsePrintFormat<'The result is %f.'>, ['float']>>,
   Expect<Equal<ParsePrintFormat<'The result is %h.'>, ['hex']>>,

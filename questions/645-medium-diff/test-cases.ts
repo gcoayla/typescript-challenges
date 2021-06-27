@@ -10,4 +10,6 @@ type Bar = {
   gender: number
 }
 
+type tmp = Diff<Foo, Bar>
+
 type cases = [Expect<Equal<Diff<Foo, Bar>, { gender: number }>>]

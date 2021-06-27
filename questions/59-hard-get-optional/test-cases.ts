@@ -1,5 +1,7 @@
 import { GetOptional } from './template'
 
+type tmp = GetOptional<{ foo: number; bar?: string }>
+
 type cases = [
   Expect<Equal<GetOptional<{ foo: number; bar?: string }>, { bar?: string }>>,
   Expect<

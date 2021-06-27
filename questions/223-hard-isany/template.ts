@@ -1,1 +1,1 @@
-export type IsAny<T> = any
+export type IsAny<T> = false extends (true & T) ? true : false

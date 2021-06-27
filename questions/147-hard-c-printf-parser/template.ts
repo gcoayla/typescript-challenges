@@ -8,4 +8,10 @@ export type ControlsMap = {
   p: 'pointer'
 }
 
-export type ParsePrintFormat = any
+type Parser<S extends string, T extends any[] = []> = S extends '' ? [] : S extends `${infer I}%${infer C}${infer R}` ?
+  C extends keyof ControlsMap ? Parser<R, [...T, ControlsMap[`${C}`]]> : Parser<R, T> : T
+
+type Clean<S extends string> = S extends '' ? S : S extends `${infer I}%%${infer R}` ? Clean<`${I}%${R}`> : S;
+
+
+export type ParsePrintFormat<S extends string> = Parser<Clean<S>>

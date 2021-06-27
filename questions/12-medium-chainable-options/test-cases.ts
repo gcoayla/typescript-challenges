@@ -1,4 +1,4 @@
-import { Alike } from './template'
+import { Chainable } from './template'
 
 declare const a: Chainable
 
@@ -7,6 +7,8 @@ const result = a
   .option('bar', { value: 'Hello World' })
   .option('name', 'type-challenges')
   .get()
+
+const res = typeof result;
 
 type cases = [Expect<Alike<typeof result, Expected>>]
 
