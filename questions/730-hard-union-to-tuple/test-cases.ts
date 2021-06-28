@@ -2,6 +2,8 @@ import { UnionToTuple } from './template'
 
 type ExtractValuesOfTuple<T extends any[]> = T[keyof T & number]
 
+type tmp = UnionToTuple<'a' | 'b'>
+
 type cases = [
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<'a' | 'b'>>, 'a' | 'b'>>,
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<'a'>>, 'a'>>,
